@@ -21,4 +21,20 @@ sudo service elasticsearch start
 sudo curl http://localhost:9200
 
 sudo apt-get install logstash
-h
+
+vim /etc/logstash/conf.d/10-syslog.conf
+
+sudo service logstash restart
+
+sudo curl -XGET 'localhost:9200/_cat/indices?v&pretty'
+
+sudo apt-get install kibana
+
+sudo vim /etc/kibana/kibana.yml
+  server.port: 5601
+  server.host: "0.0.0.0"
+  elasticsearch.url: "http://localhost:9200"
+  
+sudo service kibana start
+
+Point your browser to ‘http://YOUR_ELASTIC_IP:5601’ after Kibana is started
