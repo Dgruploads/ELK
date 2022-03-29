@@ -33,7 +33,7 @@ sudo apt-get install kibana
 sudo vim /etc/kibana/kibana.yml
   server.port: 5601
   server.host: "0.0.0.0"
-  elasticsearch.url: "http://localhost:9200"
+  elasticsearch.hosts: "http://localhost:9200"
   
 sudo service kibana start
 
