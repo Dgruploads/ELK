@@ -208,6 +208,15 @@ processors:
 
 filebeat.registry.path: /var/lib/filebeat
 
+
+
+
+#################### TO FIX THE BELOW PROBLEM ###################
+runtime/cgo: pthread_create failed: Operation not permitted
+runtime/cgo: pthread_create failed: Operation not permitted
+SIGABRT: abort
+################### ADD THE BELOW CONTENTS TO filebeat.yml FILE ###################
+
 seccomp:
   default_action: allow 
   syscalls:
